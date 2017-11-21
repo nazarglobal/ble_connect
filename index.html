@@ -1,0 +1,145 @@
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
+    <style type="text/css">
+      body {
+        color: #2c3e50;
+        background: #DCDBDC;
+      }
+      h1 {
+        text-align: center;
+      }
+      .center {
+
+      }
+      /* Acordeon styles */
+      .tab {
+        position: relative;
+        margin-bottom: 1px;
+        width: 100%;
+        color: #000;
+        overflow: hidden;
+      }
+      input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+      }
+      label {
+        position: relative;
+        display: block;
+        padding: 0 0 0 1em;
+        background: #16a085;
+        line-height: 3;
+        cursor: pointer;
+      }
+      .blue label {
+        background: #FFF;
+      }
+      .tab-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #1abc9c;
+        -webkit-transition: max-height .35s;
+        -o-transition: max-height .35s;
+        transition: max-height .35s;
+      }
+      .blue .tab-content {
+        background: #FAFAFA;
+        /* You can start monoti: */
+        font-family: Roboto-Regular;
+        font-size: 14px;
+        color: rgba(0,0,0,0.87);
+        line-height: 20px;
+      }
+      .tab-content p {
+        margin: 1em;
+      }
+      /* :checked */
+      input:checked ~ .tab-content {
+        max-height: 10em;
+      }
+      /* Icon */
+      label::after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        width: 3em;
+        height: 3em;
+        line-height: 3;
+        text-align: center;
+        -webkit-transition: all .35s;
+        -o-transition: all .35s;
+        transition: all .35s;
+      }
+      input[type=checkbox] + label::after {
+        content: "+";
+      }
+      input[type=radio] + label::after {
+        content: "\25BC";
+      }
+      input[type=checkbox]:checked + label::after {
+        transform: rotate(315deg);
+      }
+      input[type=radio]:checked + label::after {
+        transform: rotateX(180deg);
+      }
+
+      .help-box{
+        min-height: 100px;
+        /* Toolbar bg: */
+        background: #00427C;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+        /* How can we help you?: */
+        font-family: Roboto-Regular;
+        font-size: 34px;
+        color: #FFFFFF;
+        letter-spacing: -1.15px;
+        line-height: 3;
+        padding: 0 0 0 0.4em;
+      }
+      
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var sectionName = document.location.hash.replace('#', '');
+        if (sectionName) {
+          $('input[type="radio"]').removeAttr('checked');
+          $('input[id="' + sectionName + '"]').attr('checked', true);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">              
+      <div class="help-box">How can we help you?</div>
+    <div class="center">
+      <div class="tab blue">
+        <input type="radio" id="section1" name="section">
+        <label for="section1">Label One</label>
+        <div class="tab-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+        </div>
+      </div>
+      <div class="tab blue">
+        <input type="radio" id="section2" name="section">
+        <label for="section2">Label Two</label>
+        <div class="tab-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+        </div>
+      </div>
+      <div class="tab blue">
+        <input type="radio" id="section3" name="section">
+        <label for="section3">Label Three</label>
+        <div class="tab-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
