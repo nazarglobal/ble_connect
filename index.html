@@ -113,13 +113,15 @@
           $('input[id="' + sectionName + '"]').attr('checked', true);
         }
         
-        $(".tab").click(function(event) {
-            var $target = $(event.target);
-            $('html, body').animate({
-                scrollTop: $target.offset().top
-            }, 1000);
-            event.preventDefault();
-        });
+        setTimeout(function() {
+          $(".tab").click(function(event) {
+              var $target = $(event.target);
+              $('html, body').animate({
+                  scrollTop: $target.offset().top
+              }, 1000);
+              event.preventDefault();
+          });
+        }, 150);
       });
     </script>
   </head>
