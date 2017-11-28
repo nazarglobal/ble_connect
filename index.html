@@ -105,23 +105,22 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        console.log("ready");
-        
         var sectionName = document.location.hash.replace('#', '');
         if (sectionName) {
           $('input[type="radio"]').removeAttr('checked');
           $('input[id="' + sectionName + '"]').attr('checked', true);
         }
         
-        setTimeout(function() {
-          $(".tab").click(function(event) {
-              var $target = $(event.target);
-              $('html, body').animate({
-                  scrollTop: $target.offset().top
-              }, 1000);
-              // event.preventDefault();
-          });
-        }, 1000);
+        $("div.tab > label").click(function(event) {
+            var $target = $(event.target);
+
+            $('html, body').animate({
+                scrollTop: $target.offset().top
+            }, 1000);
+
+            event.preventDefault();
+        });
+        
       });
     </script>
   </head>
