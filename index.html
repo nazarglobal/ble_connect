@@ -105,18 +105,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        
-        $(".tab").click(function(event) {
-            let $target = $(event.target);
-
-            $('html, body').animate({
-                scrollTop: $target.offset().top
-            }, 1000);
-
-            event.preventDefault();
-        });
-
-        let sectionName = document.location.hash.replace('#', '');
+        var sectionName = document.location.hash.replace('#', '');
         if (sectionName) {
           $('input[type="radio"]').removeAttr('checked');
           $('input[id="' + sectionName + '"]').attr('checked', true);
