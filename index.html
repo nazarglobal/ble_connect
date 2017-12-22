@@ -20,7 +20,7 @@
         position: relative;
         margin-bottom: 1px;
         width: 100%;
-        color: #000;
+        color: #848484;
         overflow: hidden;
       }
       input {
@@ -42,7 +42,7 @@
 
       }
       .blue label {
-        background: #FFF;
+        background: #fdfdfd;
       }
       .tab-content {
         max-height: 0;
@@ -65,6 +65,10 @@
       /* :checked */
       input:checked ~ .tab-content {
         max-height: 35em;
+      }
+      input:checked ~ label {
+        color: #000000;
+        background-color: #e2e2e2;
       }
       /* Icon */
       label::after {
